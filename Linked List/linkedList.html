@@ -1,0 +1,161 @@
+<script>
+class LinkedListNode {
+  constructor(val) {
+    this.val = val; 
+    this.next = null;
+  }
+}
+
+class LinkedList {
+   constructor() {
+     this.head = null;
+     this.length = 0;
+   }
+   
+   insert(val) {
+     let newNode = new LinkedListNode(val); // Make a new node. 
+     if (this.head == null) { // If there are no nodes in our list, this should be our head node. 
+       this.head = newNode; 
+     }
+     else { // Otherwise, loop through all of our nodes until we are at the end of our list! 
+       let cur = this.head; 
+       while (cur.next != null) {
+         cur = cur.next; 
+       }
+	   // At this point, cur will be our last node, so make it’s ‘next’ be the new node, and we are done! 
+       cur.next = newNode; 
+     }
+	   // We inserted a node… so update the length of list! 
+     this.length++; 
+   }
+   
+   getLastNode() {
+    // can you do this one? 
+      let cur = this.head; 
+      while (cur.next != null) {
+         cur = cur.next; 
+       }
+      console.log('Last Node is ' + cur);
+   }
+   
+   sortList() {
+     // hard question, any ideas how you could sort your list?
+
+      let cur = this.head;
+      for(let i = 0; i<this.length; i++){
+          for(let j = 0; j < this.length-1; j++){
+              if (cur.val > cur.next.val){
+                  var tmpholder = cur.val;
+                  cur.val = cur.next.val;
+                  cur.next.val = tmpholder;
+              }
+          }
+      }
+   }
+   
+   printEveryOtherNode() {
+    // should print every other value. If your list looks like (2) -> (4) -> (8) -> 10)  it should print: 2 8
+
+      var cur = this.head;
+      console.log(cur.val);
+      while (cur != null) {
+          console.log(cur.val);
+          cur = cur.next.next;
+      }
+   }
+
+   deleteNode(val) {
+	  // Should remove any node in list with this val. How can you delete node? (2) -> (4) -> (1) . If you change the node holding 2 to have it’s ‘next’ node be the node holding 1, you’ve deleted 4! Challenging, but cool.
+
+    var cur = this.head;
+      while (cur.val != null) {
+          if (cur.val == val) {
+            while (cur.next != null){
+              cur = cur.next;
+            }
+            break;
+          }else{
+              cur = cur.next;
+          }
+      } 
+
+   }
+   
+   printEvenNodes() {
+      // should print nodes that have even values. If your list is (2) -> (3) -> (8) -> null it would print 2 8
+
+      let cur = this.head; 
+      if (cur.val % 2 == 0) {
+        console.log(cur.val);
+      }
+      while (cur.next != null) {
+         cur = cur.next; 
+         if (cur.val % 2 == 0) {
+            console.log(cur.val);
+          }
+       }
+   }
+   
+   reverseList() {
+      // hard question. can you think of a way you could reverse the order of nodes? 
+      let lastCur = this.head; 
+      let cur = this.head;
+      let nodeValues = [];
+      while (lastCur != null) {
+         nodeValues.push(lastCur.val);
+         lastCur = lastCur.next; 
+      }
+
+      console.log(nodeValues);
+      
+      for(let i = nodeValues.length; i > 0; i--){
+        if (cur != null) {
+           cur.val = nodeValues[i];
+           cur = cur.next;
+        }
+      }
+   }
+
+   printList() {
+      let cur = this.head;
+      while (cur != null) {
+         console.log(cur.val);
+         cur = cur.next; 
+      }
+   }
+}
+
+let myLinkedList = new LinkedList(); // Creating the list.
+
+// Inserting new elements.
+myLinkedList.insert(45); 
+myLinkedList.insert(87); 
+myLinkedList.insert(58);
+myLinkedList.insert(94);
+myLinkedList.insert(84);
+myLinkedList.insert(96);
+myLinkedList.insert(99);
+
+console.log("List:");
+myLinkedList.printList(); // Printing the List.
+
+myLinkedList.sortList(); // Sorting list.
+console.log("Sorted List:");
+myLinkedList.printList(); // Printing the List.
+
+myLinkedList.deleteNode(87); // Deleting the Node with value 87.
+console.log("List after Deleting Node:");
+myLinkedList.printList(); // Printing the List.
+
+console.log("EveryOtherNode:");
+myLinkedList.printEveryOtherNode();
+
+myLinkedList.reverseList();// Reversing list.
+console.log("Reversed List:");
+myLinkedList.printList(); // Printing the List.
+
+console.log("List of Even Node:");
+myLinkedList.printEvenNodes();
+
+
+</script>

@@ -1,0 +1,163 @@
+Try to think about the lessons and explain, in your own words, the answers below ( a sentence or two is fine):
+
+1.	What does it mean to write object oriented code? How is it different than procedural code (the kind of code we have been writing usually)
+Ans:    Object oriented programming is the better, organized and improven way of programming where the codes are easier to write, read and manage.
+	Therefore, writing object oriented codes means to write the organized codes that is easier to understand and handle which also gives better sense.
+
+	Object oriented code is very different than the procedural code. Some of the difference are listed in the table below:
+	+---------------------------------------------------------------+------------------------------------------------------------------+
+	| Object oriented Code                                          | Procedural Code                                                  |
+	+---------------------------------------------------------------+------------------------------------------------------------------+
+	| 1. Codes are saved into different files.                      | 1. All codes are saved into single files.                        |
+	| 2. It's easier to read, write and understand codes.           | 2. It's comparitively diffcult to read, write and understand     |
+	|                                                               |    codes.                                                        |
+	| 3. Here, codes are divided into small part called objects.    | 3. Here, codes are divided into small part called functions.     |
+	| 4. Adding and removing codes are easier.                      | 4. Adding and removing codes are diffcult.                       |
+	+---------------------------------------------------------------+------------------------------------------------------------------+
+ 
+2.	What is a class in programming? 
+Ans:	Class is the container which contains instrutions and specifications about how objects should be created and interact or beheave in the progrm.
+	It contains the constructor which defines the way for the creation of object and several other methods that defines the behiviours of the object.
+
+3.	What is an attribute? How does it relate to a class? 
+Ans:	An attribute is the field which defines the characterstics of the object created with the class where it belongs to.
+	Attribute has relation with class. The characterstics the object created with any class is defined by its attributes. Attributes are used to
+	store the data about the object's characterstices or features. Therefore, attribute and class are related to eachother as the attribute is the
+	part of class.
+
+a.	Say I have a class describing a pencil, what is an attribute it might have? 
+Ans:	The attributes that a class describing about a pencil might be the followings:
+	1. String brand;
+	2. String color;
+	3. int length;
+
+	The class would look like:
+
+	public class Pencil {
+	    String brand;
+	    String color;
+	    int length;
+	}
+
+4.	What is a class method? What do they allow us to do?
+Ans:	Class method is the part of class which contains the set of instructions that defines the behiviours of the objcets.
+	It allows us to instruct the object to carryout some activities as theirs behiviours. 
+
+a.	Say I had an object describing a computer, what is a method it may have?
+Ans:	An object describing a computer might have the following method:
+
+	public class Computer{
+	    public void playMusic(){
+		System.out.println("Playing wow music.");
+	    }
+	}
+
+
+5.	What is a constructor? Why do we need them? 
+Ans:	A constructor is a special method that contains the set of instructions which defines way of creating objects of the class it belongs to.
+	We need them to specify the way of creating new objects of the calss it belongs to.
+
+6.	What is the difference between a CLASS and an OBJECT (or ‘instance’) ? (they are very related, do you know how to explain them seperately) ? 
+Ans:	The difference between CLASS and OBJECT are listed in the table below:
+	+---------------------------------------------------------------+------------------------------------------------------------------+
+	| Class                                                         | Object                                                           |
+	+---------------------------------------------------------------+------------------------------------------------------------------+
+	| 1. It defines the process of object creation.                 | 1. Object is thing that is created as per the definations        |
+	|                                                               |    mentioned in class.                                           |
+	| 2. Class is a logical entity.                                 | 2. Object is a physical entity..                                 |
+	| 3. Classes are declared once in the program.                  | 3. Objects are created as many as needed.                        |
+	+---------------------------------------------------------------+------------------------------------------------------------------+
+
+
+7.	What does ‘inheritence’ mean for object oriented programming? Why is it helpful? 
+Ans:	Inheritence is the way of organizing the codes where relation is made between two classes (child and parent) and child or sub class can inherit the
+	behiviours (methods/constructor) of parent or base class. It is helpful because it allows us to set relation between the classes to inherit the methods
+	from parent class to child class.
+
+
+8.	What does the keyword ‘extends’ mean when defining a class? (This is kind of specific to java, but javascript uses the same word for this meaning) 
+Ans:    The keyword ‘extends’ is used to set the relation between the child class and parent class for the inheritence of methods. It means we are creating
+	a sub class of the the class we are extending. It helps us to create the class that extends to some other class where the class will inherit the methods
+	of the class that it is extended to.
+
+
+9.	Explain to me an interface (advanced question!)
+Ans:	An interface is the contract which makes the class implementing it must have the characterstics mentioned it. It contains abstract methods within it.
+	Any class implementing the interface must have the methods that are mentioned as the abstract methods in the interface. Interface is very useful to define
+	the unique and sure charecterstic (method) to any class. Interface also makes the mentioned methods compulsory for the classes implementing it. However, the
+	set of instructions can be different in different classes though the mentioned methods are compulsory to be followed.
+
+	An interface contains abstract methods and any class implementing that interface must follow that methods. We can implement the single interface in as many
+	class as we want. Interface is the best way to assign the specific methods to any class we want.
+
+
+10.	Explain to me what abstraction is (advanced question!)
+Ans:	Abstract class is the class with abstract methods. The instance or object can't be created with the abstract class but its method can be abstracted to other
+	child class expanding to it. Therefore, I guess abstraction is process where abstract class is defined as parent class and the child class should their own
+	implementation of the methods mentioned in a abstract class.
+
+
+
+Questions for you after you complete watching about ES6: 
+1.	What is the spread operator ? How is it used?
+Ans:	Spread operator is the expression in javascript(ES6) that spreads or expands the array into its elements. It is three dots followed by the name of Array. It looks
+	like '...ArrayName'. It allows the expressions to be spreaded and placed where multiple arguments are expected.
+	
+	For example:
+	var Friends = ["Matt Sir", "Rabin", "Prabin"];
+
+	function displayFriends(Friend1, Friend2, Friend3) = {
+		console.log(Friend1, Friend2, Friend3);
+	}
+
+	displayFriends(...Friends); // Here Friends array is spreaded into its elements and each elements are passed as arguments.
+
+	It also helps to copy arrays.
+	var FriendsList = [...Friends];
+
+	It also can be used to concatenate arrays.
+	var Peoples = ["Pratyush", "John"];
+
+	var newFriends = [...Friends, ...Peoples];
+
+	We can even add new elements in between.
+
+	var newFriends = [...Friends, "Rama", ...Peoples];
+
+
+
+2.	What is object destructuring? Why is it useful?
+Ans:	Destructuring is the expression in javascript(ES6) that helps to extract dada from objects of arrays. It is very interesting feature of ES6 where we can extract
+	the elements of object or array and assign it to the different variables. It looks like 'var[Friend1, Friend2] = Friends;' whrere Friends is the array and
+	Friend1 & Friend2 are the variables to which the first two elements of Friends array get assigned.
+
+	It is useful because it allows us to extract the datas form array or objects easily with few codes.
+	For example:
+	
+	var Friends = {
+		Friend1 : "Matt Sir",
+		Friend2 :  "Rabin",
+		Friend3 :  "Prabin"
+	};
+
+	var{Friend1, Friend2, Friend3} = Friends; // Here the value of different property of object 'Friends' and assign the to the variables Friend1, Friend2 & Friend3.
+	console.log(Friend1 " will be happy if " + Friend2 + " makes " + Friend3 + " happy."); // Here the variables are used separately.
+	// This line will  print "Matt Sir will be happy if Rabin makes Prabin happy.".
+
+
+
+3.	Explain the difference between Let/Const/Var.
+Ans:	The difference between Let/Const/Var are:
+
+	a. var declarations are globally scoped or function scoped while let and const are block scoped.
+	b. var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated
+	   nor re-declared.
+	c. They are all hoisted to the top of their scope but while var variables are initialized with undefined, let and const variables are not initialized.
+	d. While var and let can be declared without being initialized, const must be initialized during declaration.
+
+
+
+
+
+
+
